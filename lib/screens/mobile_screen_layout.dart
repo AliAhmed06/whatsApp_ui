@@ -35,7 +35,7 @@ class MobileScreenLayout extends StatelessWidget {
         body: Column(
           children: [
             Text(
-              'Mobile',
+              'This is the screen for mobile',
               style: TextStyle(color: Colors.red),
             ),
           ],
