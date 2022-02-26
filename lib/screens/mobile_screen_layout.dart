@@ -1,4 +1,6 @@
 import 'package:clone1/colors.dart';
+import 'package:clone1/info.dart';
+import 'package:clone1/widgets/contacts_list.dart';
 import 'package:flutter/material.dart';
 
 class MobileScreenLayout extends StatelessWidget {
@@ -8,39 +10,26 @@ class MobileScreenLayout extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
-            'WhatsApp',
-            style: TextStyle(
-              color: Colors.grey,
-              fontSize: 20,
-              fontWeight: FontWeight.bold
-            ),          
-          ),
-          // centerTitle: false,
+          title: Text('WhatsApp'),
           actions: [
-            IconButton(onPressed: (){}, icon: Icon(Icons.search, color: Colors.grey,)),
-            IconButton(onPressed: (){}, icon: Icon(Icons.more_vert, color: Colors.grey,)),
+            IconButton(onPressed: (){}, icon: Icon(Icons.search),),
+            IconButton(onPressed: (){}, icon: Icon(Icons.more_vert),)
           ],
           bottom: TabBar(
-            indicatorColor: tabColor,
+            indicatorColor: Colors.grey,
             indicatorWeight: 4,
-            labelColor: tabColor,
+            labelColor: Colors.white,
+            unselectedLabelColor: Colors.grey,
             tabs: [
               Tab(text: "CHATS",),
               Tab(text: "STATUS",),
               Tab(text: "CALLS",),
-            ]
+            ],
           ),
         ),
-        body: Column(
-          children: [
-            Text(
-              'mobile screen',
-              style: TextStyle(color: Colors.red),
-            ),
-          ],
-        ),
-      ),
+        
+        body: ContactsList(),
+      )      
     );
   }
 }
